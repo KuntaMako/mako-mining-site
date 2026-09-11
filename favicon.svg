@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mako Mining">
+  <defs>
+    <linearGradient id="makoHex" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#18B37F"/>
+      <stop offset="1" stop-color="#0B6A49"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3 L57.1 17.5 L57.1 46.5 L32 61 L6.9 46.5 L6.9 17.5 Z" fill="url(#makoHex)"/>
+  <path d="M15.5 45.5 L24 22 L31.5 33 L40 22 L48.5 45.5 Z" fill="#F5F2EA"/>
+  <rect x="15" y="45" width="34" height="3.6" rx="1.8" fill="#D98A54"/>
+</svg>

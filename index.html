@@ -6,6 +6,24 @@
 <title>Mako Mining · Critical Minerals, Sourced and Delivered</title>
 <meta name="description" content="Mako Mining connects verified producers with global buyers. Sourcing, facilitation and delivery of critical minerals, from the pit face to the world's ports.">
 <meta name="theme-color" content="#101A15">
+<link rel="canonical" href="https://makomining.co.za/">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mako Mining">
+<meta property="og:title" content="Mako Mining · Critical Minerals, Sourced and Delivered">
+<meta property="og:description" content="Mako connects verified producers with global buyers. Sourcing, facilitation and delivery of critical minerals, from the pit face to the world's ports.">
+<meta property="og:url" content="https://makomining.co.za/">
+<meta property="og:image" content="https://makomining.co.za/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mako Mining. From the pit face to the world's ports.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mako Mining · Critical Minerals, Sourced and Delivered">
+<meta name="twitter:description" content="Sourcing, facilitation and delivery of critical minerals, from the pit face to the world's ports.">
+<meta name="twitter:image" content="https://makomining.co.za/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -26,6 +44,9 @@
   ::selection{background:var(--malachite);color:#fff}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
+  .skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:var(--bone);padding:12px 18px;border-radius:0 0 10px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .skip:focus{left:0}
+  :focus-visible{outline:2px solid var(--malachite2);outline-offset:3px;border-radius:3px}
   h1,h2,h3{font-family:var(--disp);color:var(--ink);line-height:1.02;font-weight:600;letter-spacing:-.015em}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 44px}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);display:inline-flex;align-items:center;gap:12px}
@@ -35,10 +56,13 @@
   header{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px 44px;transition:background .4s,box-shadow .4s,padding .4s;border-bottom:1px solid transparent}
   header.scrolled{background:rgba(245,242,234,.9);backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:12px 44px}
   .brand{display:flex;align-items:center;gap:14px}
-  .logo-frame{display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 10px;box-shadow:0 2px 10px rgba(22,33,27,.06)}
-  .logo-frame img{height:38px;width:auto;max-width:170px;object-fit:contain}
-  .wordmark{display:none;font-family:var(--disp);font-weight:900;font-size:26px;letter-spacing:-.01em;color:var(--ink);align-items:center;gap:2px}
-  .wordmark small{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.2em;color:var(--muted);display:block;margin-top:3px;text-transform:uppercase}
+  .brand .mark{display:block;flex:none;line-height:0}
+  .brand .mark svg{height:44px;width:44px;display:block;transition:height .4s}
+  header.scrolled .brand .mark svg{height:40px}
+  .wordmark{display:flex;flex-direction:column;line-height:1}
+  .wordmark b{font-family:var(--disp);font-weight:900;font-size:25px;letter-spacing:0;color:var(--ink)}
+  .wordmark small{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;margin-top:5px;padding-left:1px}
+  @media(max-width:420px){.wordmark b{font-size:22px}.brand .mark svg{height:40px;width:40px}}
   nav{display:flex;align-items:center;gap:30px}
   nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.8;transition:opacity .2s,color .2s}
   nav a:hover{opacity:1;color:var(--malachite)}
@@ -151,9 +175,9 @@
   @media(max-width:900px){
     .wrap,.head,.work,.egrid,.sgrid,.g3,.cwrap,.fgrid,.fbot{padding-left:24px;padding-right:24px}
     header{padding:14px 24px}header.scrolled{padding:12px 24px}
-    nav{display:none;position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,242,234,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:6px 0}
-    nav.open{display:flex}
-    nav a{padding:15px 24px;width:100%;border-bottom:1px solid var(--line)}
+    #nav{display:none;position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,242,234,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:6px 0}
+    #nav.open{display:flex}
+    #nav a{padding:15px 24px;width:100%;border-bottom:1px solid var(--line)}
     .menu{display:block}
     .work{grid-template-columns:1fr}
     .work .item{border-right:none;border-bottom:1px solid var(--line);padding:30px 0}
@@ -171,14 +195,44 @@
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mako Mining (Pty) Ltd",
+  "alternateName": "Mako Mining",
+  "url": "https://makomining.co.za/",
+  "logo": "https://makomining.co.za/brand/mako-icon-512.png",
+  "image": "https://makomining.co.za/og-image.png",
+  "description": "Mako is an import and export facilitator for high value mining commodities, connecting verified producers with global buyers. Sourcing, contracts, compliance, logistics and delivery.",
+  "email": "info@makomining.co.za",
+  "telephone": "+27106150069",
+  "foundingDate": "2011",
+  "areaServed": "Worldwide",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Golf View Office Park, Building B, Unit BU1, 25 Pressburg, Founders Hill",
+    "addressLocality": "Modderfontein, Johannesburg",
+    "postalCode": "1609",
+    "addressCountry": "ZA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27744187453",
+    "contactType": "sales",
+    "availableLanguage": "en"
+  }
+}
+</script>
 </head>
 <body>
 
+<a class="skip" href="#top">Skip to content</a>
+
 <header id="hd">
-  <a class="brand" href="#top">
-    <!-- Uses "Mako Logo.jpeg" from this folder. If missing, the MAKO wordmark shows instead. -->
-    <span class="logo-frame"><img src="Mako Logo.jpeg" alt="Mako Mining" onerror="this.style.display='none';this.closest('.brand').querySelector('.wordmark').style.display='inline-flex';this.closest('.logo-frame').style.display='none'"></span>
-    <span class="wordmark">MAKO<small>Resources Group</small></span>
+  <a class="brand" href="#top" aria-label="Mako Mining, home">
+    <span class="mark"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="hexHeader" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18B37F"/><stop offset="1" stop-color="#0B6A49"/></linearGradient></defs><path d="M32 3 L57.1 17.5 L57.1 46.5 L32 61 L6.9 46.5 L6.9 17.5 Z" fill="url(#hexHeader)"/><path d="M15.5 45.5 L24 22 L31.5 33 L40 22 L48.5 45.5 Z" fill="#F5F2EA"/><rect x="15" y="45" width="34" height="3.6" rx="1.8" fill="#D98A54"/></svg></span>
+    <span class="wordmark"><b>MAKO</b><small>Mining</small></span>
   </a>
   <nav id="nav">
     <a href="#work">What we do</a>
@@ -186,7 +240,7 @@
     <a href="#offices">Offices</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="menu" id="menu" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </header>
 
 <!-- HERO -->
@@ -255,9 +309,9 @@
     <p class="lede">Our people and our offices, where the deals get done.</p>
   </div>
   <div class="g3">
-    <div class="ph reveal"><img src="office-1.jpg" alt="Mako office"></div>
-    <div class="ph reveal"><img src="office-2.jpg" alt="Mako office"></div>
-    <div class="ph reveal"><img src="office-3.jpg" alt="Mako office"></div>
+    <div class="ph reveal"><img src="office-1.jpg" alt="Mako reception, Johannesburg office" loading="lazy" decoding="async"></div>
+    <div class="ph reveal"><img src="office-2.jpg" alt="Mako meeting lounge where deals are done" loading="lazy" decoding="async"></div>
+    <div class="ph reveal"><img src="office-3.jpg" alt="Mako office building exterior at Golf View Office Park" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -290,7 +344,7 @@
   <div class="fgrid">
     <div class="fb">
       <div class="wm">MAKO</div>
-      <p>Mako Resources Group. Sourcing, facilitation and delivery of critical minerals, from the pit face to the world's ports.</p>
+      <p>Mako Mining. Sourcing, facilitation and delivery of critical minerals, from the pit face to the world's ports.</p>
     </div>
     <nav class="fnav">
       <a href="#work">What we do</a>
@@ -306,7 +360,7 @@
   </div>
   <div class="fbot">
     <span>© 2026 Mako Mining. All rights reserved.</span>
-    <span>Site by <a href="#">Busy Signal IT</a></span>
+    <span>Site by <a href="https://wa.me/27681616498" target="_blank" rel="noopener">Busy Signal IT</a></span>
   </div>
 </footer>
 
@@ -317,8 +371,9 @@
   var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40);};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   var nav=document.getElementById('nav'),menu=document.getElementById('menu');
-  menu.addEventListener('click',function(){nav.classList.toggle('open');});
-  Array.prototype.forEach.call(nav.querySelectorAll('a'),function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+  var setMenu=function(open){nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',open?'true':'false');menu.setAttribute('aria-label',open?'Close menu':'Open menu');};
+  menu.addEventListener('click',function(){setMenu(!nav.classList.contains('open'));});
+  Array.prototype.forEach.call(nav.querySelectorAll('a'),function(a){a.addEventListener('click',function(){setMenu(false);});});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   Array.prototype.forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el);});
 </script>
